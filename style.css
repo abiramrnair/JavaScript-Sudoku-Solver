@@ -1,5 +1,11 @@
+body {
+    background-color: darkgrey;
+    
+}
+
 h1 {
-    text-align: center;    
+    text-align: center; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
 }
 
 input {
@@ -13,23 +19,23 @@ input {
 }
 
 tr,td:nth-child(3) { 
-    border-right: 5px solid black;
+    border-right: 7px solid black;
 
 }
 
 tr,td:nth-child(6) { 
-    border-right: 5px solid black;
+    border-right: 7px solid black;
 
 }
 
 td :nth-child(3n){
-    border-right: 5px solid black;
+    border-right: 7px solid black;
 }
 
 
 
 tr:nth-child(3n) td {
-    border-bottom: 5px solid black;
+    border-bottom: 7px solid black;
 }
 
 tr:nth-child(9) td {
@@ -45,4 +51,19 @@ div {
 
 th, td {
     padding: 1px;    
+}
+
+button {
+    position: relative;
+    left: 730px;
+    top: 50px; 
+    border-radius: 15px;
+    width: 100px;
+    padding: 15px 32px;   
+    font-size: 16px;
+    text-align: center;
+    display: inline-block;
+    margin-left: 5%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    outline: none;
 }

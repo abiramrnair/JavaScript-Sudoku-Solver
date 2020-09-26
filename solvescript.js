@@ -1,16 +1,49 @@
-// unsolved sudoku board
-var board =[[7,8,0,4,0,0,1,2,0],
-          [6,0,0,0,7,5,0,0,9],
-          [0,0,0,6,0,1,0,7,8],
-          [0,0,7,0,4,0,2,6,0],
-          [0,0,1,0,5,0,9,3,0],
-          [9,0,4,0,6,0,0,0,5],
-          [0,7,0,3,0,0,0,1,2],
-          [1,2,0,0,0,7,4,0,0],
-          [0,4,9,2,0,6,0,0,7]
+var board = [   [0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0]
 ];
 
+
+var boxes = document.getElementsByName("square");
+
+function boxtoArray() {
+    var boxes = document.getElementsByName("square");
+    num = 0;
+
+    for (i = 0; i < 9; i++) {
+        for (j = 0; j < 9; j++) {
+
+            board[i][j] = Number(boxes[num].value);
+            num += 1;           
+            
+        }
+    }
+    return board;    
+}
+
+function arraytoBox() {    
+    var boxes = document.getElementsByName("square");
+    num = 0;
+
+    for (i = 0; i < 9; i++) {
+        for (j = 0; j < 9; j++) {
+
+            boxes[num].value = board[i][j];
+            num += 1;           
+            
+        }
+    }
+    return boxes;
+}
+
 // get size of board
+
 size = board.length;
 
 // check row
@@ -64,7 +97,7 @@ function passCheck(row, col, num) {
 function solveBoard() { // recursively call function
     var row;
     var col;
-    var num;
+    var num;      
 
     for (row = 0; row < size; row++) {
         for (col = 0; col < size; col++) {
@@ -74,6 +107,7 @@ function solveBoard() { // recursively call function
                 for (num = 1; num <= size; num++) {
 
                     if (passCheck(row, col, num)) {
+
                         board[row][col] = num;
 
                         if (solveBoard()) {
@@ -83,12 +117,30 @@ function solveBoard() { // recursively call function
                         }
                     }                    
                 }
-                return false;
+                document.getElementById("message").textContent = "No Solution";
+                return false;                
             }
-
         }
     }
+
+    arraytoBox();
+    document.getElementById("message").textContent = "Solved";
     return true;
 }
+
+function solve() {
+    boxtoArray();
+    return solveBoard();
+}
+
+function reset() {
+    var boxes = document.getElementsByName("square");
+
+    for (i = 0; i < 81; i++) {
+        boxes[i].value = " ";
+    }    
+}
+
+
 
 
