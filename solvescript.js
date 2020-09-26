@@ -1,5 +1,4 @@
 // unsolved sudoku board
-
 var board =[[7,8,0,4,0,0,1,2,0],
           [6,0,0,0,7,5,0,0,9],
           [0,0,0,6,0,1,0,7,8],
@@ -11,7 +10,10 @@ var board =[[7,8,0,4,0,0,1,2,0],
           [0,4,9,2,0,6,0,0,7]
 ];
 
+// get size of board
 size = board.length;
+
+// check row
 
 function rowCheck(row, num) {
     for (i = 0; i < size; i++) {
@@ -59,7 +61,7 @@ function passCheck(row, col, num) {
     return false;
 }
 
-function solveBoard() {
+function solveBoard() { // recursively call function
     var row;
     var col;
     var num;

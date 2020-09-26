@@ -1,0 +1,48 @@
+h1 {
+    text-align: center;    
+}
+
+input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+    border: 1px solid black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;       
+}
+
+tr,td:nth-child(3) { 
+    border-right: 5px solid black;
+
+}
+
+tr,td:nth-child(6) { 
+    border-right: 5px solid black;
+
+}
+
+td :nth-child(3n){
+    border-right: 5px solid black;
+}
+
+
+
+tr:nth-child(3n) td {
+    border-bottom: 5px solid black;
+}
+
+tr:nth-child(9) td {
+    border-bottom: none;
+}
+
+div {
+    border: 10px solid black;
+    width: fit-content;
+    position: relative;
+    left: 670px;
+}
+
+th, td {
+    padding: 1px;    
+}
